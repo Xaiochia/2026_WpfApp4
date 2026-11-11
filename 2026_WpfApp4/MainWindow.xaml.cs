@@ -20,5 +20,11 @@ namespace _2026_WpfApp4
         {
             InitializeComponent();
         }
+        
+        private void OpenButton_Click(object sender, RoutedEventArgs e)
+        {
+            MyDocument MyDocument = new MyDocument();
+            MyDocument.Show();
+        }
     }
 }
