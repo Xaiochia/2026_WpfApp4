@@ -1,5 +1,5 @@
 # WPF小作家
-##2026/11/11
+2026/11/11：
 
     1.新增一個 DocumentViewer 視窗（此處以 MyDocument 為名），用來顯示和瀏覽文檔內容。
     2.在主視窗 MainWindow 中新增一個按鈕，點擊後可以打開 DocumentViewer 視窗（此處以 MyDocument 為名）。
@@ -10,7 +10,7 @@
     7.新增變更文字字型的 ComboBox，讓使用者可以選擇不同的字型。
     8.新增變更文字大小的 ComboBox，讓使用者可以選擇不同的字體大小。
 
-##2026/11/18
+2026/11/18：
 
     1.在 MyDocumentViewer.xaml 中（此處以 MyDocument 為名），新增按鈕命令綁定，更新字體選擇與顏色選擇的事件處理程序。
     2.在 MyDocumentViewer.xaml.cs 中（此處以 MyDocument 為名），實現打開與保存 .rtf 文件的功能，並新增字體顏色、字體家族、字體大小的選擇與初始化邏輯。
