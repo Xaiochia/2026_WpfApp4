@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:_2026_WpfApp4"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
         Title="MyDocument" Height="450" Width="800">
     <Window.CommandBindings>
@@ -14,37 +14,37 @@
     </Window.CommandBindings>
     <DockPanel VerticalAlignment="Top">
         <ToolBarTray Height="40" Width="800" VerticalAlignment="Top" HorizontalAlignment="Left" DockPanel.Dock="Top" Background="Aqua">
-            <ToolBar x:Name="FileToolbar" Height="42" Width="180" Background="Beige">
+            <ToolBar x:Name="ApplicationToolbar" Height="42" Width="180" Background="Beige">
                 <Button x:Name="NewfileButton" Width="38" Height="38" Command="ApplicationCommands.New">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\new.png"/>
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\new.png"/>
                 </Button>
                 <Button x:Name="OpenfileButton" Width="38" Height="38" Command="ApplicationCommands.Open">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\open.png"/>
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\open.png"/>
                 </Button>
                 <Button x:Name="SavefileButton" Width="38" Height="38" Command="ApplicationCommands.Save">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\save.png"/>
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\save.png"/>
                 </Button>
-                <Button x:Name="DeleteButton" Width="38" Height="38">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\trash.png"/>
+                <Button x:Name="DeleteButton" Width="38" Height="38" Click="TrashButton_Click">
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\trash.png"/>
                 </Button>
             </ToolBar>
             <ToolBar x:Name="EditingToolbar" Height="40" Width="612" Background="#FFEEDDAC">
-                <ToggleButton x:Name="BoldButton">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\bold.png"/>
+                <ToggleButton x:Name="BoldButton" Width="38" Height="38" Command="EditingCommands.ToggleBold">
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\bold.png"/>
                 </ToggleButton>
-                <ToggleButton x:Name="ItalicButton">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\italic.png"/>
+                <ToggleButton x:Name="ItalicButton" Width="38" Height="38" Command="EditingCommands.ToggleItalic">
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\italic.png"/>
                 </ToggleButton>
-                <ToggleButton x:Name="UnderlineButton">
-                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\2026_WpfApp4\2026_WpfApp4\underline.png"/>
+                <ToggleButton x:Name="UnderlineButton" Width="38" Height="38" Command="EditingCommands.ToggleUnderline">
+                    <Image Width="32" Height="32" Source="C:\Users\owner\source\repos\Xaiochia\2026_WpfApp4\2026_WpfApp4\underline.png"/>
                 </ToggleButton>
-                <xctk:ColorPicker x:Name="FontColorPicker" Width="160" Height="35"/>
-                <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="35" Margin="5,0,0,0"/>
-                <ComboBox x:Name="FontSizeComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="35" Margin="5,0,0,0"/>
+                <xctk:ColorPicker x:Name="FontColorPicker" Width="160" Height="35" SelectedColorChanged="FontColorPicker_SelectedColorChanged"/>
+                <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="35" Margin="5,0,0,0" SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
+                <ComboBox x:Name="FontSizeComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="50" Height="35" Margin="5,0,0,0" SelectionChanged="FontSizeComboBox_SelectionChanged"/>
             </ToolBar>
         </ToolBarTray>
-        <StatusBar Height="395" DockPanel.Dock="Bottom" Background="LightGray"/>
-        <RichTextBox x:Name="MainRichTextBox" Background="#FFEFEFEC">
+        <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"/>
+        <RichTextBox x:Name="MainRichTextBox" Background="#FFEFEFEC" SelectionChanged="MainRichTextBox_SelectionChanged">
             <FlowDocument/>
         </RichTextBox>
     </DockPanel>
